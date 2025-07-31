@@ -21,12 +21,14 @@ const authRoutes = require("./routes/authRoutes");
 const petRoutes = require("./routes/petRoutes");
 const requestRoutes = require("./routes/requestRoutes");
 const statsRoutes = require("./routes/statsRoutes");
+const donationRoutes = require("./routes/donationRoutes"); // ✅ הוספה חשובה
 
 // שימוש בראוטים
 app.use("/api", authRoutes);
 app.use("/api", petRoutes);
-app.use("/api", requestRoutes); // ✅ זו השורה שתוקנה
+app.use("/api", requestRoutes);
 app.use("/api/stats", statsRoutes);
+app.use("/api/donations", donationRoutes); // ✅ תיקון: זו הנקודה החשובה
 
 // הפעלת השרת
 const PORT = 3000;
